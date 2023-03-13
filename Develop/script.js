@@ -6,6 +6,9 @@ const upperCase = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "
 const specialChar = ["!", "@", "#", "%", "^", "&", "*", "(", ")", "_", "+", "=", "-", "?", ">", "<", "]", "[", "}", "{"];
 const numbers = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
 
+
+// Prompts user to input desired number of characters, if user inputs an invalid input then recursively calls itself until a correct
+// input is given
 function getNumberOfChars(){
   let numberOfCharacters = Number(prompt("What is the desired number of characters for your password (8-128)?"));
 
@@ -15,13 +18,11 @@ function getNumberOfChars(){
 
   return numberOfCharacters
 }
-
-
+// Provides several possible inputs to say yes tot he prompt, otherwise it will return false (as if you do not want that type of character in your password)
 function getTrueOrFalse(promptMessage){
   let promptResult = prompt(promptMessage).toLowerCase();
   
-  // By default returns false if yes, y or true is not inputted
-  if(promptResult === "yes" || promptResult === "y" || promptResult === "true"){
+  if(promptResult === "yes" || promptResult === "y" || promptResult === "true" || promptResult === "t" ){
     return true
   } else {
     return false
